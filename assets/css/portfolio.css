@@ -141,6 +141,8 @@ a.social-icon:hover {
     text-shadow: 1px 1px 2px black; /* Adds a darker effect */
 }
 
+
+
 @media only screen and ( min-width: 1000px ) { /* desktop: do things when size it 1000px or greater */
     .content-container {
         width: 790px;
@@ -195,15 +197,19 @@ a.social-icon:hover {
         transform: scale( 1.5 );
     }
 
-    .hover-360 {
-        -webkit-transition: -webkit-transform 1s ease-in-out;
+    .hover-360{
+        -webkit-transition: webkit-transform 1s ease-in-out;
         transition: transform 1s ease-in-out;
     }
 
     .hover-360:hover {
-        -webkit-transform: rotate( 360deg );
-        transform: rotate( 360deg );
-        cursor:pointer;
+        animation: rotate360 1s ease-in-out forwards;
+    }
+
+    @keyframes rotate360 {
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
     .main-container {
@@ -235,6 +241,11 @@ a.social-icon:hover {
         width: 100%;
         margin-top: 30px;
         font-size: 16px;
+    }
+
+    .leetcode > img{
+        width: 15px;
+        filter: invert(1);
     }
 
     .profile-picture {
@@ -306,6 +317,9 @@ a.social-icon:hover {
         width: 100%;
         display: none;
         text-align: center;
+    }
+    .sidebar-nav-container.active {
+        display: block; /* Show when toggled */
     }
 
     .sidebar-social-container {
