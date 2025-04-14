@@ -1,5 +1,5 @@
 // store current file name and split it on period
-var fileName = document.location.href.match(/[^\/]+$/)[0];
+var fileName = (document.location.href.match(/[^\/]+$/) || ["index.html"])[0];
 
 $(function () {
     $('.sidebar-container').load('sidebar.html', function () {
